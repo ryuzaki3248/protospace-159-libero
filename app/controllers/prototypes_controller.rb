@@ -1,7 +1,7 @@
+class PrototypesController < ApplicationController
 
-class prototypesController < ApplicationController
-
-  def index  
+  def index
+  
   end
- 
- end
+
+end

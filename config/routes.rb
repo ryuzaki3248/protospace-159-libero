@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
-  get 'posts', to: 'prototypes#index'
+  root to: 'prototypes#index'
+  resources :prototypes, only: :index
+  
+
 
 end
