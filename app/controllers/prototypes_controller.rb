@@ -15,6 +15,12 @@ class PrototypesController < ApplicationController
     redirect_to '/'
   end
 
+
   private
+
+  def show
+    @prototype = Prototype.find(params[:id])
+  end
+
 
 end
