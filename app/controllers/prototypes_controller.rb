@@ -11,12 +11,21 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    Prototype.create(prototype_params)
-    redirect_to '/'
+
+    
+    if current_user.create(user_params)
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
 
   private
+  def prototype_params
+    params.require(:prototype).permit(:title, :catch_copy, :concept).merge(user_id: current_user.id)
+  end
+
 
   def show
     @prototype = Prototype.find(params[:id])
