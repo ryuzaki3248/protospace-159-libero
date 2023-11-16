@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         belongs_to :comment
+        belongs_to :comment
 
   validates :name, presence: true
   validates :profile, presence: true
